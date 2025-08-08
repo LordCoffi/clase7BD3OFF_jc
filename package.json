@@ -1,0 +1,32 @@
+{
+  "name": "clase7db3off_jc",
+  "version": "1.0.0",
+  "description": "API DE CLASE 7 BY JEAN COFFI",
+  "main": "index.js",
+  "scripts": {
+     "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LordCoffi/clase7BD3OFF_jc.git"
+  },
+  "keywords": [
+    "clase7",
+    "API"
+  ],
+  "author": "JEAN COFFI",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LordCoffi/clase7BD3OFF_jc/issues"
+  },
+  "homepage": "https://github.com/LordCoffi/clase7BD3OFF_jc#readme",
+  "dependencies": {
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "mysql2": "^3.14.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
