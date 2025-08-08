@@ -1,6 +1,7 @@
 // index.js
 require('dotenv').config();
 const express = require('express');
+const path = require("path");
 const app = express();
 
 
@@ -10,6 +11,8 @@ const app = express();
 const rutasAlquileres = require('./routes/alquileres');
 const rutasClientes   = require('./routes/clientes');
 const rutasVehiculos  = require('./routes/vehiculos');
+
+app.use(express.static(path.join(__dirname, "views")));
 
 app.use(express.json());
 

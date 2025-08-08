@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Clase 7 Railway</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <h1>Clase 7 Railway</h1>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <h2>1. ¿Qué es una API REST?</h2>
+      <p>
+        Una API REST (Representational State Transfer) es un estilo arquitectónico para diseñar servicios web.
+        Se basa en recursos identificados por URLs y utiliza métodos HTTP (GET, POST, PUT, DELETE…) para operar
+        sobre ellos. REST promueve una comunicación stateless (sin mantener estado en el servidor) y hace hincapié
+        en la separación entre cliente y servidor.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>2. ¿Cómo implementar un manejo de errores robusto en una API REST construida con Node.js y MySQL?</h2>
+      <ul>
+        <li><strong>Try/Catch centralizado:</strong> Usar middleware de captura de errores en Express para atrapar excepciones.</li>
+        <li><strong>Validación anticipada:</strong> Emplear librerías como Joi o express-validator para validar datos de entrada antes de llegar a la capa de BD.</li>
+        <li><strong>Errores específicos:</strong> Definir clases de error personalizadas (p. ej. <code>DatabaseError</code>, <code>ValidationError</code>) y lanzarlas según el caso.</li>
+        <li><strong>Logs estructurados:</strong> Registrar errores con un logger (p. ej. Winston o Pino) incluyendo contexto (query, payload, usuario).</li>
+        <li><strong>Desconexión controlada:</strong> Asegurar que, ante errores graves, las conexiones a MySQL se cierren o retornen al pool correctamente.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3. Mejores prácticas para respuestas HTTP adecuadas</h2>
+      <ul>
+        <li><strong>Códigos de estado:</strong>
+          <ul>
+            <li><code>200 OK</code> para respuestas exitosas.</li>
+            <li><code>201 Created</code> tras crear un recurso.</li>
+            <li><code>400 Bad Request</code> para errores de validación o datos faltantes.</li>
+            <li><code>401 Unauthorized</code> si falta o es inválido el token de autenticación.</li>
+            <li><code>404 Not Found</code> cuando no existe el recurso solicitado.</li>
+            <li><code>500 Internal Server Error</code> ante fallos inesperados del servidor.</li>
+          </ul>
+        </li>
+        <li><strong>Mensajes consistentes:</strong> Devolver siempre un JSON con la misma estructura, por ejemplo:
+          <pre>{
+  "status": "error",
+  "message": "Detalle del error",
+  "code": 400
+}</pre>
+        </li>
+        <li><strong>Separación de mensajes y datos:</strong> Incluir un campo <code>data</code> solo en respuestas exitosas.</li>
+        <li><strong>Documentación clara:</strong> Mantener una referencia (Swagger/OpenAPI) con ejemplos de cada código de respuesta.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Profesor <strong>Ronald Palacios</strong> |
+      Alumno <strong>Jean Coffi</strong> C.I: <strong>29.518.292</strong> |
+      Curso: <u>Api HTML y JavaScript</u> &copy; 2025
+    </p>
+  </footer>
+</body>
+</html>
